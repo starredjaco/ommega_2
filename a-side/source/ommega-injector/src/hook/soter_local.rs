@@ -1424,18 +1424,6 @@ fn platform() -> &'static Platform {
             || board.starts_with("qcom");
         if qcom {
             Platform {
-                cpu_prefix: "09000000",
-                device_id_ascii: true,
-                declares_salt: true,
-                salt_len: MTK_SALT_LEN,
-                generate_rotates: false,
-                tee_n: "Kinibi-FFA-A-610a-V008-20240926_141444_120597_6923a",
-                tee_v: "10018",
-                fp_n: "FPC",
-                fp_v: "6516",
-            }
-        } else {
-            Platform {
                 cpu_prefix: "00000000",
                 device_id_ascii: false,
                 declares_salt: false,
@@ -1445,6 +1433,18 @@ fn platform() -> &'static Platform {
                 tee_v: "5",
                 fp_n: "Stargate",
                 fp_v: "1",
+            }
+        } else {
+            Platform {
+                cpu_prefix: "09000000",
+                device_id_ascii: true,
+                declares_salt: true,
+                salt_len: MTK_SALT_LEN,
+                generate_rotates: false,
+                tee_n: "Kinibi-FFA-A-610a-V008-20240926_141444_120597_6923a",
+                tee_v: "10018",
+                fp_n: "FPC",
+                fp_v: "6516",
             }
         }
     })
